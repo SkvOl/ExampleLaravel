@@ -1,0 +1,2561 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "🎄Api Пензенского государственного университета",
+        "description": "Api Пензенского государственного университета",
+        "version": "Pnzgu"
+    },
+    "paths": {
+        "/v2/user/right": {
+            "get": {
+                "tags": [
+                    "user",
+                    "right"
+                ],
+                "summary": "Получение прав пользователя",
+                "description": "Получение прав пользователя",
+                "operationId": "466196cf6069fd2daee4fa325ed7a7e1",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/RightGetRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "right_id": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "5"
+                                                    },
+                                                    "model_id": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "61"
+                                                    },
+                                                    "level_rights_model": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "41"
+                                                    },
+                                                    "server_id": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1"
+                                                    },
+                                                    "department_id": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "0"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/user/role/{id}": {
+            "get": {
+                "tags": [
+                    "user",
+                    "role"
+                ],
+                "summary": "Получение ролей пользователя",
+                "description": "Получение ролей пользователя",
+                "operationId": "93d66fa944c60435a74a94495b2b417b",
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "5"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "Администратор модуля телефонии"
+                                                    },
+                                                    "role_id": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "3"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "user",
+                    "role"
+                ],
+                "summary": "Удаление ролей пользователя",
+                "description": "Удаление ролей пользователя",
+                "operationId": "600ab0fd989984a371d3527baa84b9e7",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/RoleDeleteRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "format": "int",
+                                                    "example": 1
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/user/role": {
+            "post": {
+                "tags": [
+                    "user",
+                    "role"
+                ],
+                "summary": "Создание ролей пользователя",
+                "description": "Создание ролей пользователя",
+                "operationId": "93e4577ba2d2aec1cc1b53428afdb7a1",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/RoleCreateRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "format": "int",
+                                                    "example": 1
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/session/authentication": {
+            "post": {
+                "tags": [
+                    "session"
+                ],
+                "summary": "Аутентификация пользователей ПГУ",
+                "description": "Аутентификация пользователей ПГУ",
+                "operationId": "b3afcc28fdaf5178108b150bca4af154",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/SessionAuthenticationRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "sub": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "517671772"
+                                                    },
+                                                    "adm": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1"
+                                                    },
+                                                    "pssch": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "0"
+                                                    },
+                                                    "iat": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733806994"
+                                                    },
+                                                    "exta": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733893394"
+                                                    },
+                                                    "extr": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733979794"
+                                                    },
+                                                    "a_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXAiOiJKV1QifQ==.eyJzdWIiOjUxNzY3MTc3MiwiYWRtIjoxLCJwc3NjaCI6MCwiaWF0IjoxNzMzODA2OTk0LCJleHRhIjoxNzFkljhpSlfgJleHRyIjoxNzMzOTc5Nzk0fQ==.8898d5f990bd718a7e3b3afad1be593c26f99b35803797fa15f825b69346a975"
+                                                    },
+                                                    "r_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "91a04f11291724e9238c2b49549c68d4"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/session/refresh": {
+            "post": {
+                "tags": [
+                    "session"
+                ],
+                "summary": "Обновление a_token пользователей ПГУ",
+                "description": "Обновление a_token пользователей ПГУ",
+                "operationId": "a76d2b3e27f80c46aa6c832e26dd4198",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/SessionRefreshRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "a_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXAiOiJKV1QifQ==.eyJzdWIiOjUxNzY3MTc3MiwiYWRtIjoxLCJwc3NjaCI6MCwiaWF0IjoxNzMzODA2OTk0LCJleHRhIjoxNzFkljhpSlfgJleHRyIjoxNzMzOTc5Nzk0fQ==.8898d5f990bd718a7e3b3afad1be593c26f99b35803797fa15f825b69346a975"
+                                                    },
+                                                    "r_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "91a04f11291724e9238c2b49549c68d4"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/session/check": {
+            "post": {
+                "tags": [
+                    "session"
+                ],
+                "summary": "Проверка a_token пользователей ПГУ",
+                "description": "Проверка a_token пользователей ПГУ",
+                "operationId": "f179b42c77a421c9676e12d1b1cb9c3a",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/SessionCheckRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "sub": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "517671772"
+                                                    },
+                                                    "adm": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1"
+                                                    },
+                                                    "pssch": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "0"
+                                                    },
+                                                    "iat": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733806994"
+                                                    },
+                                                    "exta": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733893394"
+                                                    },
+                                                    "extr": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733979794"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/session/change": {
+            "patch": {
+                "tags": [
+                    "session"
+                ],
+                "summary": "Изменение сессии пользователя",
+                "description": "Изменение сессии пользователя",
+                "operationId": "587fbe63d66dd4b4a4ab37d4fcb0fcc9",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/SessionChangeRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "sub": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "517671772"
+                                                    },
+                                                    "adm": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1"
+                                                    },
+                                                    "pssch": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "0"
+                                                    },
+                                                    "iat": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733806994"
+                                                    },
+                                                    "exta": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733893394"
+                                                    },
+                                                    "extr": {
+                                                        "type": "integer",
+                                                        "format": "int",
+                                                        "example": "1733979794"
+                                                    },
+                                                    "a_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXAiOiJKV1QifQ==.eyJzdWIiOjUxNzY3MTc3MiwiYWRtIjoxLCJwc3NjaCI6MCwiaWF0IjoxNzMzODA2OTk0LCJleHRhIjoxNzFkljhpSlfgJleHRyIjoxNzMzOTc5Nzk0fQ==.8898d5f990bd718a7e3b3afad1be593c26f99b35803797fa15f825b69346a975"
+                                                    },
+                                                    "r_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "91a04f11291724e9238c2b49549c68d4"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/session/logout": {
+            "post": {
+                "tags": [
+                    "session"
+                ],
+                "summary": "Выход из аккаунта для пользователей ПГУ",
+                "description": "Выход из аккаунта для пользователей ПГУ",
+                "operationId": "a74aaec20f4cf78ae4650832ec550a7a",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/SessionLogoutRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "a_token": {
+                                                        "type": "string",
+                                                        "format": "jwt",
+                                                        "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                                    },
+                                                    "r_token": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "eyJhbGciOiJzaGEyN"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/example/app": {
+            "get": {
+                "tags": [
+                    "example"
+                ],
+                "summary": "Тестовый url получающий заявления",
+                "description": "Тестовый url получающий заявления",
+                "operationId": "48a474779f805f8388386b6a446ed3f2",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/page"
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    },
+                    {
+                        "$ref": "#/components/parameters/order"
+                    },
+                    {
+                        "$ref": "#/components/parameters/query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "paginator": {
+                                            "$ref": "#/components/schemas/Paginator"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Error"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "Message": {
+                                                    "type": "string",
+                                                    "format": "string",
+                                                    "example": "syntax error, unexpected token \"}\""
+                                                },
+                                                "Info": {
+                                                    "$ref": "#/components/schemas/Error"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "example"
+                ],
+                "summary": "Тестовый url для создание заявления",
+                "description": "Тестовый url для создание заявления",
+                "operationId": "91073d4d41ae4549346d43cb7c48f895",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/AppCreateRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "format": "int",
+                                                    "example": 1
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/example/app/{id}": {
+            "get": {
+                "tags": [
+                    "example"
+                ],
+                "summary": "Тестовый url получающий заявление",
+                "description": "Тестовый url получающий заявление",
+                "operationId": "9de32fdb801135b0e167dc05691de1e5",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/page"
+                    },
+                    {
+                        "$ref": "#/components/parameters/per_page"
+                    },
+                    {
+                        "$ref": "#/components/parameters/order"
+                    },
+                    {
+                        "$ref": "#/components/parameters/query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "paginator": {
+                                            "$ref": "#/components/schemas/Paginator"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Error"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "Message": {
+                                                    "type": "string",
+                                                    "format": "string",
+                                                    "example": "syntax error, unexpected token \"}\""
+                                                },
+                                                "Info": {
+                                                    "$ref": "#/components/schemas/Error"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "example"
+                ],
+                "summary": "Тестовый url для удаления заявления",
+                "description": "Тестовый url для удаления заявления",
+                "operationId": "6041f740454a0f7a0750438dc315c165",
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "format": "int",
+                                                    "example": 1
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Error"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "Message": {
+                                                    "type": "string",
+                                                    "format": "string",
+                                                    "example": "syntax error, unexpected token \"}\""
+                                                },
+                                                "Info": {
+                                                    "$ref": "#/components/schemas/Error"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "example"
+                ],
+                "summary": "Тестовый url для изменения заявления",
+                "description": "Тестовый url для изменения заявления",
+                "operationId": "380981688887b4779dc51986976de778",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/AppChangeRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "format": "int",
+                                                    "example": 1
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Error"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "Message": {
+                                                    "type": "string",
+                                                    "format": "string",
+                                                    "example": "syntax error, unexpected token \"}\""
+                                                },
+                                                "Info": {
+                                                    "$ref": "#/components/schemas/Error"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/role": {
+            "get": {
+                "tags": [
+                    "role"
+                ],
+                "summary": "Получение всех ролей",
+                "description": "Получение всех ролей",
+                "operationId": "78ed7992a1ea7dc51a1386952354aa65",
+                "responses": {
+                    "200": {
+                        "description": "Успешно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string",
+                                            "example": "Successfully"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "3"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "format": "string",
+                                                        "example": "Администратор модуля телефонии"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Ошибка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error500"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Error": {
+                "properties": {
+                    "line": {
+                        "type": "integer",
+                        "example": 37
+                    },
+                    "file": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "/path_to_file/..."
+                    }
+                },
+                "type": "object"
+            },
+            "Error500": {
+                "description": "Стандартный формат ошибки",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "Error"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "Message": {
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "syntax error, unexpected token \"}\""
+                                },
+                                "Info": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "Error403": {
+                "description": "Ошибка",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "Error"
+                    },
+                    "Message": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "file access error, access is denied\"}\""
+                    },
+                    "Info": {
+                        "$ref": "#/components/schemas/Error"
+                    }
+                },
+                "type": "object"
+            },
+            "ErrorNotFound": {
+                "description": "Запись не найдена",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "Error"
+                    },
+                    "Message": {
+                        "type": "string",
+                        "format": "string",
+                        "example": "file access error, еntry not found\"}\""
+                    },
+                    "Info": {
+                        "$ref": "#/components/schemas/Error"
+                    }
+                },
+                "type": "object"
+            },
+            "Paginator": {
+                "properties": {
+                    "current_page": {
+                        "type": "integer",
+                        "format": "int",
+                        "example": "1"
+                    },
+                    "from": {
+                        "type": "integer",
+                        "format": "int",
+                        "example": "1"
+                    },
+                    "last_page": {
+                        "type": "integer",
+                        "format": "int",
+                        "example": "380"
+                    },
+                    "per_page": {
+                        "type": "integer",
+                        "format": "int",
+                        "example": "30"
+                    },
+                    "to": {
+                        "type": "integer",
+                        "format": "int",
+                        "example": "30"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "format": "int",
+                        "example": "11371"
+                    }
+                },
+                "type": "object"
+            },
+            "PhoneTelTransformer": {
+                "properties": {
+                    "number": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "89899394565"
+                    },
+                    "inner_number": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "733"
+                    },
+                    "is_cell": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    },
+                    "is_intercity": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    },
+                    "is_hidden": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    }
+                },
+                "type": "object"
+            },
+            "PhoneGatewayTransformer": {
+                "properties": {
+                    "name": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "1/2(1 корпус)"
+                    },
+                    "ip": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "172.16.207.130"
+                    },
+                    "ip_out": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "10.107.100.6"
+                    },
+                    "id_room": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "677"
+                    },
+                    "count_port": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "10"
+                    }
+                },
+                "type": "object"
+            },
+            "PhoneTelGatewayTransformer": {
+                "properties": {
+                    "id_tel": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    },
+                    "id_port_gateway": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    }
+                },
+                "type": "object"
+            },
+            "PhoneGatewayPortTransformer": {
+                "properties": {
+                    "id_gateway": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "8"
+                    },
+                    "name": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "5"
+                    }
+                },
+                "type": "object"
+            },
+            "PhonePlintTransformer": {
+                "properties": {
+                    "name": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "9/40"
+                    },
+                    "id_room": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "8"
+                    },
+                    "count_port": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "5"
+                    }
+                },
+                "type": "object"
+            },
+            "PhoneGatewayPlintTransformer": {
+                "properties": {
+                    "id_port_gateway": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "8"
+                    },
+                    "id_port_plint": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "5"
+                    }
+                },
+                "type": "object"
+            },
+            "FormUserTransformer": {
+                "properties": {
+                    "answer": {
+                        "schema": "boolean",
+                        "type": "null",
+                        "format": "boolean",
+                        "example": "null"
+                    },
+                    "date": {
+                        "schema": "int|string|min:0|max:99999999999999",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "1601896142"
+                    },
+                    "other": {
+                        "schema": "boolean",
+                        "type": "null",
+                        "format": "boolean",
+                        "example": "null"
+                    },
+                    "id_exec": {
+                        "schema": "int|string",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "154541"
+                    },
+                    "id_dep": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "847241436"
+                    },
+                    "id_position": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "4712"
+                    },
+                    "old": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "589931035"
+                    },
+                    "id_subject": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "75348"
+                    },
+                    "id_teacher": {
+                        "schema": "int|string|min:0",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "517727393"
+                    },
+                    "course": {
+                        "schema": "boolean",
+                        "type": "null",
+                        "format": "boolean",
+                        "example": "null"
+                    },
+                    "is_anon": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    }
+                },
+                "type": "object"
+            },
+            "FormAnswerTransformer": {
+                "properties": {
+                    "text": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "\\u041c\\u0435\\u043d\\u0435\\u0435 50%"
+                    },
+                    "is_field": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "4"
+                    }
+                },
+                "type": "object"
+            },
+            "FormTypeTransformer": {
+                "properties": {
+                    "title": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "\\u0422\\u0435\\u0441\\u0442\\u043e\\u0432\\u044b\\u0439 \\u0440\\u0430\\u0437\\u0434\\u0435\\u043b"
+                    },
+                    "description": {
+                        "schema": "string",
+                        "type": "string",
+                        "format": "string",
+                        "example": "\\u0410\\u043d\\u043a\\u0435\\u0442\\u0430"
+                    },
+                    "is_stydent": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    },
+                    "is_empl": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    },
+                    "is_opros": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    },
+                    "id_site": {
+                        "schema": "int|string|min:0|max:1",
+                        "type": "integer",
+                        "format": "int",
+                        "example": "0"
+                    }
+                },
+                "type": "object"
+            },
+            "FormTransformer": {
+                "properties": {
+                    "main": {
+                        "properties": {
+                            "text": {
+                                "schema": "string",
+                                "type": "string",
+                                "format": "string",
+                                "example": "\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441"
+                            },
+                            "id_type": {
+                                "schema": "int|string|min:0",
+                                "type": "integer",
+                                "format": "int",
+                                "example": "8"
+                            },
+                            "weight": {
+                                "schema": "int|string|min:0",
+                                "type": "integer",
+                                "format": "int",
+                                "example": "200"
+                            },
+                            "is_use": {
+                                "schema": "int|string|min:0|max:1",
+                                "type": "integer",
+                                "format": "int",
+                                "example": "0"
+                            },
+                            "is_show": {
+                                "schema": "int|string|min:0|max:1",
+                                "type": "integer",
+                                "format": "int",
+                                "example": "0"
+                            },
+                            "is_other": {
+                                "schema": "int|string|min:0|max:1",
+                                "type": "integer",
+                                "format": "int",
+                                "example": "0"
+                            },
+                            "is_subject": {
+                                "schema": "int|string|min:0|max:1",
+                                "type": "integer",
+                                "format": "int",
+                                "example": "0"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "dop_answers": {
+                        "properties": {
+                            "answers": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/FormAnswerTransformer"
+                                }
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "parameters": {
+            "page": {
+                "name": "page",
+                "in": "query",
+                "description": "Текущая страница",
+                "required": false,
+                "deprecated": false,
+                "allowEmptyValue": true
+            },
+            "per_page": {
+                "name": "per_page",
+                "in": "query",
+                "description": "Сколько эл-в нужно вывести на одной странице",
+                "required": false,
+                "deprecated": false,
+                "allowEmptyValue": true
+            },
+            "order": {
+                "name": "order",
+                "in": "query",
+                "description": "Последовательность",
+                "required": false,
+                "deprecated": false,
+                "allowEmptyValue": true
+            },
+            "query": {
+                "name": "query",
+                "in": "query",
+                "description": "Cмещение и ограничение вычислений",
+                "required": false,
+                "deprecated": false,
+                "allowEmptyValue": true
+            },
+            "id_phoneplint": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_socketexecution": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_phonegateway": {
+                "name": "id",
+                "in": "query",
+                "description": "id записи телефона и шлюза",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_plintport": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_roomtype": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_gatewayplint": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_gatewayport": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_phonetel": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_socket": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_telgateway": {
+                "name": "id",
+                "in": "query",
+                "description": "id записи телефона и шлюза",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_plintportsocket": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            },
+            "id_room": {
+                "name": "id",
+                "in": "query",
+                "description": "id номера",
+                "required": true,
+                "deprecated": false,
+                "allowEmptyValue": false
+            }
+        },
+        "requestBodies": {
+            "RoleCreateRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "user_id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "517746628"
+                                },
+                                "role_id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "4"
+                                },
+                                "department_id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "1"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "RoleDeleteRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "user_id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "517746628"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "RightGetRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "user_id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "517746628"
+                                },
+                                "server_id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "4"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhonePlintCreateRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "21/00"
+                                },
+                                "id_room": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "count_port": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneGatewayPlintChangeRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_port_gateway": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "id_port_plint": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneTelChangeRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "number": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "8"
+                                },
+                                "inner_number": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "200"
+                                },
+                                "is_cell": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_intercity": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_hidden": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneGatewayPortChangeRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "phone_gateway_port": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "name": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneGatewayChangeRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "1/2(1 корпус)"
+                                },
+                                "ip": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "172.16.207.130"
+                                },
+                                "ip_out": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "10.107.100.6"
+                                },
+                                "id_room": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "677"
+                                },
+                                "count_port": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "10"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneTelGatewayChangeRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_tel": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "8"
+                                },
+                                "id_port_gateway": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "200"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneGatewayPlintCreateRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_port_gateway": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "id_port_plint": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneGatewayPortCreateRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "phone_gateway_port": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "name": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneTelCreateRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "number": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "8"
+                                },
+                                "inner_number": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "200"
+                                },
+                                "is_cell": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_intercity": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_hidden": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneGatewayCreateRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "1/2(1 корпус)"
+                                },
+                                "ip": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "172.16.207.130"
+                                },
+                                "ip_out": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "10.107.100.6"
+                                },
+                                "id_room": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "677"
+                                },
+                                "count_port": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "10"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhonePlintChangeRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "21/00"
+                                },
+                                "id_room": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "count_port": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "PhoneTelGatewayCreateRequests": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_tel": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "8"
+                                },
+                                "id_port_gateway": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "200"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "SessionAuthenticationRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "login": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "login",
+                                    "example": "s517671772"
+                                },
+                                "password": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "password",
+                                    "example": "fdgdhd45"
+                                },
+                                "platform": {
+                                    "schema": "required|int|string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "1"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "SessionChangeRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "platform": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "4"
+                                },
+                                "id": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "517671772"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "SessionRefreshRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "a_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "jwt",
+                                    "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                },
+                                "r_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "login",
+                                    "example": "eyJhbGciOiJzaGEyN"
+                                },
+                                "platform": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "1"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "SessionCheckRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "a_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "jwt",
+                                    "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "SessionLogoutRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "a_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "jwt",
+                                    "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                },
+                                "r_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "login",
+                                    "example": "eyJhbGciOiJzaGEyN"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "AppChangeRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_execution": {
+                                    "schema": "int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "123456"
+                                },
+                                "id_level": {
+                                    "schema": "int|string|min:2|max:93",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "2"
+                                },
+                                "id_source": {
+                                    "schema": "int|string|min:1|max:4",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "4"
+                                },
+                                "guid_app": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "df4r3-g43ffg4-ds32dg-h5h5"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "AppCreateRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_execution": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "123456"
+                                },
+                                "id_source": {
+                                    "schema": "required|int|string|min:1|max:4",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "4"
+                                },
+                                "guid_app": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "df4r3-g43ffg4-ds32dg-h5h5"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "FormChangeRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "text": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441"
+                                },
+                                "id_type": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "8"
+                                },
+                                "weight": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "200"
+                                },
+                                "is_use": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_show": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_other": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_subject": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "FormAnswerCreateRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "id_form": {
+                                    "schema": "int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "10"
+                                },
+                                "text": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "\\u041c\\u0435\\u043d\\u0435\\u0435 50%"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "FormCreateRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "text": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441"
+                                },
+                                "id_type": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "8"
+                                },
+                                "weight": {
+                                    "schema": "int|string|min:0",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "200"
+                                },
+                                "is_use": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_show": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_other": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_subject": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "FormTypeCreateRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "title": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "\\u0422\\u0435\\u0441\\u0442\\u043e\\u0432\\u044b\\u0439 \\u0440\\u0430\\u0437\\u0434\\u0435\\u043b"
+                                },
+                                "description": {
+                                    "schema": "string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "\\u0410\\u043d\\u043a\\u0435\\u0442\\u0430"
+                                },
+                                "is_stydent": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_empl": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                },
+                                "is_opros": {
+                                    "schema": "int|string|min:0|max:1",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "0"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "AuthenticationRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "login": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "login",
+                                    "example": "s517671772"
+                                },
+                                "password": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "password",
+                                    "example": "fdgdhd45"
+                                },
+                                "platform": {
+                                    "schema": "required|int|string",
+                                    "type": "string",
+                                    "format": "string",
+                                    "example": "1"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "RefreshRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "a_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "jwt",
+                                    "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                },
+                                "r_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "login",
+                                    "example": "eyJhbGciOiJzaGEyN"
+                                },
+                                "platform": {
+                                    "schema": "required|int|string",
+                                    "type": "integer",
+                                    "format": "int",
+                                    "example": "1"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "LogoutRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "a_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "jwt",
+                                    "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                },
+                                "r_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "login",
+                                    "example": "eyJhbGciOiJzaGEyN"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "CheckRequest": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "a_token": {
+                                    "schema": "required|string",
+                                    "type": "string",
+                                    "format": "jwt",
+                                    "example": "eyJhbGciOiJzaGEyNTYiLCJ0eXfAiOiJKV1QifQ.eyJzdWIiOjUxNzY3r3MTc3MiwiYWRtIjhoxLCJwc3NjaCI6MCwiaWF0IjoxNzMyNjE3MDE5LCJleHRhIjoxNzMyNzAzNDE5LCJleHRyIjoxNzMyNzg5ODE5fQ.0ff71fc0d98dd36f1df07c0f77062160f26d9a4be1872d407e157fdc85f9f3dd"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "user",
+            "description": "user"
+        },
+        {
+            "name": "right",
+            "description": "right"
+        },
+        {
+            "name": "role",
+            "description": "role"
+        },
+        {
+            "name": "telephone",
+            "description": "telephone"
+        },
+        {
+            "name": "session",
+            "description": "session"
+        },
+        {
+            "name": "example",
+            "description": "example"
+        },
+        {
+            "name": "anketa",
+            "description": "anketa"
+        },
+        {
+            "name": "authentication",
+            "description": "authentication"
+        }
+    ]
+}
