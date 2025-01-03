@@ -21,6 +21,7 @@ class LocationExceptions{
 
     /**
      * Задаём исключения для url. 
+     * @param array $urlExceptions [url1, url2, ...]
      * @return void
      */
     public function setUrlExceptions(array $urlExceptions): void
@@ -30,6 +31,7 @@ class LocationExceptions{
 
     /**
      * Задаём исключения для ip. 
+     * @param array $ipExceptions [ip1, ip1, ...]
      * @return void
      */
     public function setIpExceptions(array $ipExceptions): void
