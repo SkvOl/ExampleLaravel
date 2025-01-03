@@ -40,11 +40,11 @@ class ResourceController extends BaseController{
     function index(Request $request){
         $this->validation($request, 'GetRequest');
 
-        return $this->getList($request);
+        return self::_response($this->getList($request), 200);
     }
     
     function show(string $id){
-        return $this->getOne($id);
+        return self::_response($this->getOne($id), 200);
     }
 
     function store(Request $request){
