@@ -16,8 +16,8 @@ class SessionChangeRequest extends Request{
 
     function rules(): array{
         return [
-            'platform' => 'required|int',
-            'id' =>'required|int',
+            'platform' => 'required|integer',
+            'id' =>'required|integer',
         ];
     }
 }
