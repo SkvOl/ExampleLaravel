@@ -18,9 +18,9 @@ class RoleCreateRequest extends Request{
     function rules(): array{
 
         return [
-            'user_id' => 'required|int|string',
-            'role_id'=>'required|int|string',
-            'department_id'=>'required|int|string'
+            'user_id' => 'required|integer|string',
+            'role_id'=>'required|integer|string',
+            'department_id'=>'required|integer|string'
         ];
     }
 }
