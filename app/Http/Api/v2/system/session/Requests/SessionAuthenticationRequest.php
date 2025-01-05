@@ -20,7 +20,7 @@ class SessionAuthenticationRequest extends Request{
         return [
             'login' => 'required|string',
             'password'=>'required|string',
-            'platform'=>'required|int|string'
+            'platform'=>'required|integer|string'
         ];
     }
 }
