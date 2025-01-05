@@ -16,7 +16,7 @@ class RoleDeleteRequest extends Request{
     function rules(): array{
 
         return [
-            'user_id' => 'required|int|string',
+            'user_id' => 'required|integer|string',
         ];
     }
 }
