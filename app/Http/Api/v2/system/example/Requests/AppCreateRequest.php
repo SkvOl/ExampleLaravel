@@ -18,8 +18,8 @@ class AppCreateRequest extends Request{
     function rules(): array{
 
         return [
-            'id_execution' => 'required|int',
-            'id_source'=>'required|int|min:1|max:4',
+            'id_execution' => 'required|integer',
+            'id_source'=>'required|integer|min:1|max:4',
             'guid_app'=>'string',
         ];
     }
