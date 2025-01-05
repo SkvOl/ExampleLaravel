@@ -19,9 +19,9 @@ class AppChangeRequest extends Request{
     function rules(): array{
 
         return [
-            'id_execution'=>'int',
-            'id_level'=>'int|min:2|max:93',
-            'id_source'=>'int|min:1|max:4',
+            'id_execution'=>'integer',
+            'id_level'=>'integer|min:2|max:93',
+            'id_source'=>'integer|min:1|max:4',
             'guid_app'=>'string'
         ];
     }
