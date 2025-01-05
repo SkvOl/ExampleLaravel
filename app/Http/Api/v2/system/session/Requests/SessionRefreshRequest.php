@@ -20,7 +20,7 @@ class SessionRefreshRequest extends Request{
         return [
             'a_token' => 'required|string',
             'r_token' => 'required|string',
-            'platform' => 'required|int|string',
+            'platform' => 'required|integer|string',
         ];
     }
 }
