@@ -17,8 +17,8 @@ class RightGetRequest extends Request{
     function rules(): array{
 
         return [
-            'user_id' => 'required|int|string',
-            'server_id'=>'required|int|string',
+            'user_id' => 'required|integer|string',
+            'server_id'=>'required|integer|string',
         ];
     }
 }
